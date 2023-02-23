@@ -8,7 +8,7 @@ public interface IUsuarioService {
 
 	public List<Usuario> listarUsuarios();
     
-    public void guardar(Usuario usuario);
+    public Usuario guardar(Usuario usuario);
     
     public void eliminar(Integer idUsuario);
     

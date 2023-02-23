@@ -24,8 +24,11 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
 	@Override
 	@Transactional
-	public void guardar(Usuario usuario) {
-		usuarioRepo.save(usuario);
+	public Usuario guardar(Usuario usuario) {
+		if(findExistByUsernameCognito(usuario.getUser_dni())) {
+			return null;
+		}
+		return usuarioRepo.save(usuario);
 	}
 
 	@Override
@@ -39,8 +42,6 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	public Usuario encontrarUsuario(Integer idUsuario) {
 		return usuarioRepo.findById(idUsuario).orElse(null);
 	}
-
-
 
 	@Override
 	@Transactional(readOnly = true)
