@@ -1,10 +1,9 @@
-package com.colegio.entidades;
-
-import org.springframework.data.annotation.Id;
+package com.colegio.estudiante.entidades;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Estudiante {
@@ -12,16 +11,15 @@ public class Estudiante {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
-	private int numeroDeIdentificacion;
+	private Long numeroDeIdentificacion;
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
 	private String fechaDeNacimiento;
 	private String direccion;
 	private String correo;
-	private int telefono;
-	private int promedio;
+	private Long telefono;
+	private Double promedio;
 	private int usuarioId;
 
 	public int getId() {
@@ -32,11 +30,11 @@ public class Estudiante {
 		this.id = id;
 	}
 
-	public int getNumeroDeIdentificacion() {
+	public Long getNumeroDeIdentificacion() {
 		return numeroDeIdentificacion;
 	}
 
-	public void setNumeroDeIdentificacion(int numeroDeIdentificacion) {
+	public void setNumeroDeIdentificacion(Long numeroDeIdentificacion) {
 		this.numeroDeIdentificacion = numeroDeIdentificacion;
 	}
 
@@ -88,19 +86,19 @@ public class Estudiante {
 		this.correo = correo;
 	}
 
-	public int getTelefono() {
+	public Long getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(Long telefono) {
 		this.telefono = telefono;
 	}
 
-	public int getPromedio() {
+	public Double getPromedio() {
 		return promedio;
 	}
 
-	public void setPromedio(int promedio) {
+	public void setPromedio(Double promedio) {
 		this.promedio = promedio;
 	}
 
@@ -112,8 +110,28 @@ public class Estudiante {
 		this.usuarioId = usuarioId;
 	}
 
-	public Estudiante() {
-		super();
+	public Estudiante() {}
+
+	public Estudiante(Long numeroDeIdentificacion, String nombre, String apellido1, String apellido2,
+			String fechaDeNacimiento, String direccion, String correo, Long telefono, Double promedio, int usuarioId) {
+		this.numeroDeIdentificacion = numeroDeIdentificacion;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
+		this.fechaDeNacimiento = fechaDeNacimiento;
+		this.direccion = direccion;
+		this.correo = correo;
+		this.telefono = telefono;
+		this.promedio = promedio;
+		this.usuarioId = usuarioId;
+	}
+
+	@Override
+	public String toString() {
+		return "Estudiante [id=" + id + ", numeroDeIdentificacion=" + numeroDeIdentificacion + ", nombre=" + nombre
+				+ ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", fechaDeNacimiento=" + fechaDeNacimiento
+				+ ", direccion=" + direccion + ", correo=" + correo + ", telefono=" + telefono + ", promedio="
+				+ promedio + ", usuarioId=" + usuarioId + "]";
 	}
 	
 }

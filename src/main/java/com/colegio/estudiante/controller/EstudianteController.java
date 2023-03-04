@@ -1,4 +1,4 @@
-package com.colegio.Controller;
+package com.colegio.estudiante.controller;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.colegio.entidades.Estudiante;
-import com.colegio.servicios.EstudianteService;
+import com.colegio.estudiante.entidades.Estudiante;
+import com.colegio.estudiante.servicios.EstudianteService;
 
 
 @RestController
@@ -35,7 +35,7 @@ public class EstudianteController {
 	public ResponseEntity<Estudiante> obtenerEstudiante(@PathVariable("id") int id) {
 		Estudiante estudiante = estudianteService.getEstudianteById(id);
 		if (estudiante == null) {
-			return ResponseEntity.notFound().build();
+			return ResponseEntity.noContent().build();
 		}
 		return ResponseEntity.ok(estudiante);
 	}

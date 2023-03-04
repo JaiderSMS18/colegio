@@ -1,12 +1,12 @@
-package com.colegio.servicios;
+package com.colegio.estudiante.servicios;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.colegio.entidades.Estudiante;
-import com.colegio.repositorio.EstudianteRepository;
+import com.colegio.estudiante.entidades.Estudiante;
+import com.colegio.estudiante.repositorio.EstudianteRepository;
 
 @Service
 public class EstudianteService {
