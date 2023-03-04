@@ -4,17 +4,18 @@ package com.martinez.configurations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.web.reactive.function.client.WebClient;
+/*import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;*/
 
-@Configuration
+//@Configuration
 //@EnableWebSecurity
 public class Configurations {
 
-	@Autowired
+	/*@Autowired
     JwtFilter jwtFilter;
 	
 	@Autowired
@@ -33,11 +34,9 @@ public class Configurations {
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         
     http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-            /*.oauth2Login()
-            .and()
-            .logout()
-            .logoutSuccessUrl("/")
-            .permitAll();*/
+            
         return http.build();
-    }
+    }*/
+	
+	
 }

@@ -2,14 +2,14 @@ package com.martinez.configurations;
 
 import java.util.Collection;
 
-import org.springframework.security.authentication.AbstractAuthenticationToken;
+/*import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 
-import com.nimbusds.jwt.JWTClaimsSet;
+import com.nimbusds.jwt.JWTClaimsSet;*/
 
-public class JwtAuthenticator extends AbstractAuthenticationToken{
+public class JwtAuthenticator {//extends AbstractAuthenticationToken{
 	
-	private Object usuarioLogeado;
+	/*private Object usuarioLogeado;
 	private JWTClaimsSet claims;
 	
 	
@@ -28,6 +28,6 @@ public class JwtAuthenticator extends AbstractAuthenticationToken{
 	@Override
 	public Object getPrincipal() {
 		return null;
-	}
+	}*/
 
 }

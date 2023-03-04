@@ -12,16 +12,16 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.security.core.Authentication;
+//import org.springframework.security.core.context.SecurityContextHolder;
 
 
 
-@Component
-public class JwtFilter extends OncePerRequestFilter {
+//@Component
+public class JwtFilter {//extends OncePerRequestFilter {
 
 	//@Lazy
-	@Autowired
+	/*@Autowired
     JwtProvider jwtProvider;
 
     @Override
@@ -36,6 +36,6 @@ public class JwtFilter extends OncePerRequestFilter {
            System.out.println(e);
         }
         filterChain.doFilter(request, response);
-    }
+    }*/
 
 }

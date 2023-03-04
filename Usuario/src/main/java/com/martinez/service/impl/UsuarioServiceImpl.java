@@ -5,8 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.reactive.function.client.WebClient;
 
-import com.martinez.modelo.Usuario;
+import com.martinez.entity.Usuario;
+import com.martinez.modelo.Estudiante;
+import com.martinez.modelo.Materia;
 import com.martinez.repositorio.IUsuarioDao;
 import com.martinez.service.IUsuarioService;
 
@@ -15,6 +18,9 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	
 	@Autowired
 	private IUsuarioDao usuarioRepo;
+
+	WebClient webClient = WebClient.builder().build();
+	
 	
 	@Override
 	@Transactional(readOnly = true)
@@ -62,6 +68,23 @@ public class UsuarioServiceImpl implements IUsuarioService {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public List<Materia> listarMaterias(Long usuarioId) {
+		List<Materia> materia = webClient.get().uri("http://localhost:8081/materias/usuario/"  + usuarioId).retrieve().bodyToFlux(Materia.class)
+															.collectList().block();
+		return materia;
+	}
+
+	@Override
+	public List<Estudiante> listarEstudiantes(int usuarioId) {
+	List<Estudiante>  estudiantes = this.webClient.get().uri("http://localhost:8082/perfilDelEstudiante/usuario/" + usuarioId)
+														.retrieve()
+														.bodyToFlux(Estudiante.class)
+														.collectList()
+														.block();
+		return estudiantes;
 	}
 
 }
