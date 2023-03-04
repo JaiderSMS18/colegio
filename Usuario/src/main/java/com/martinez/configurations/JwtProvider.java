@@ -4,23 +4,23 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-/*import org.springframework.security.core.Authentication;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;*/
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
 import com.martinez.service.IUsuarioService;
-//import com.nimbusds.jwt.JWTClaimsSet;
-//import com.nimbusds.jwt.proc.ConfigurableJWTProcessor;
+import com.nimbusds.jwt.JWTClaimsSet;
+import com.nimbusds.jwt.proc.ConfigurableJWTProcessor;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-//@Component
+@Component
 public class JwtProvider {
 
-	/*@Value("${spring.security.oauth2.client.provider.cognito.issuer-uri}")
+	@Value("${spring.security.oauth2.client.provider.cognito.issuer-uri}")
 	private String identityPoolUrl;
 	private static final String USERNAME_FIELD = "cognito:username";
     private static final String AUTHORIZATION = "AutorizarToken";
@@ -58,5 +58,5 @@ public class JwtProvider {
 	
 	private String getToken(String token) {
 		return token.startsWith("Bearer ") ? token.substring("Bearer ".length()) : token;
-	}*/
+	}
 }
