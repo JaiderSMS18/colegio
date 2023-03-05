@@ -1,0 +1,3 @@
+[submodule "colegio"]
+	path = colegio
+	url = https://github.com/JaiderSMS18/colegio.git
