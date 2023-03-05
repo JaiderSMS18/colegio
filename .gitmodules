@@ -1,3 +1,6 @@
 [submodule "colegio"]
 	path = colegio
 	url = https://github.com/JaiderSMS18/colegio.git
+[submodule "perfilEstudiante/perfilEstudiante"]
+	path = perfilEstudiante/perfilEstudiante
+	url = https://github.com/JaiderSMS18/colegio.git
