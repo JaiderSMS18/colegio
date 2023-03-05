@@ -35,16 +35,28 @@ public class UsuarioApplication {
 		SpringApplication.run(UsuarioApplication.class, args);
 	}
 	
+<<<<<<< HEAD
+=======
+	
+
+>>>>>>> perfilEstudiante
 	@Bean
 	public ConfigurableJWTProcessor configurableJWTProcessor() throws MalformedURLException {
 		ResourceRetriever resourceRetriever = new DefaultResourceRetriever(connectionTimeout, readTimeout);
 		URL jwkURL = new URL(jwkUrl);
 		JWKSource jwkSource = new RemoteJWKSet(jwkURL, resourceRetriever);
 		ConfigurableJWTProcessor jwtProcessor = new DefaultJWTProcessor();
+<<<<<<< HEAD
 		JWSKeySelector keySelector = new JWSVerificationKeySelector(JWSAlgorithm.RS256, jwkSource);
 		jwtProcessor.setJWSKeySelector(keySelector);
 		return jwtProcessor;
 	}
 	
+=======
+		JWSKeySelector keySelector = new JWSVerificationKeySelector(JWSAlgorithm.RS256, jwkSource);	
+		jwtProcessor.setJWSKeySelector(keySelector);
+		return jwtProcessor;
+	}
+>>>>>>> perfilEstudiante
 
 }

@@ -4,7 +4,13 @@ package com.martinez.configurations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+<<<<<<< HEAD
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+=======
+import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+>>>>>>> perfilEstudiante
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -33,9 +39,13 @@ public class Configurations {
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);   
         return http.build();
     }
+<<<<<<< HEAD
 	/*.authorizeRequests(authz -> authz.requestMatchers("/")
             .permitAll()
             .anyRequest()
             .authenticated())*/
+=======
+	
+>>>>>>> perfilEstudiante
 	
 }

@@ -20,6 +20,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 @Component
 public class JwtFilter extends OncePerRequestFilter {
 
+<<<<<<< HEAD
+=======
+	
+>>>>>>> perfilEstudiante
 	@Autowired
     JwtProvider jwtProvider;
 
